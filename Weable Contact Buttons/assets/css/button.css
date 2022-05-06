@@ -1,0 +1,154 @@
+:root {
+    --white: #ffffff;
+    --red: #dd3333;
+    --dot-color: #dd3333;
+}
+
+* {
+    border: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* button */
+
+.button-fixed {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--red);
+    border-radius: 100rem;
+    bottom: 16px;
+    right: 16px;
+}
+
+.button-fixed>img {
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+    object-fit: cover;
+}
+
+.button-fixed .button-fixed-comment {
+    width: 50%;
+    height: 50%;
+    margin-top: 7px;
+    margin-left: 2px;
+}
+
+.button-fixed .button-fixed-close {
+    width: 35%;
+    height: 35%;
+}
+
+.button-fixed>img:hover {
+    transform: rotateY(180deg);
+}
+
+/* button */
+
+/* popup contact */
+.popup__contact {
+    position: fixed;
+    width: 310px;
+    height: max-content;
+    box-shadow: 0 0 50px rgb(0 0 0 / 24%);
+    border-radius: 8px;
+    background-color: #fff;
+    transition: all .2s ease-in-out;
+    visibility: hidden;
+    transform: scale(.1);
+    bottom: 100px;
+    right: 16px;
+    transform-origin: bottom right;
+}
+
+.popup__contact.active {
+    transform: scale(1);
+    visibility: visible;
+}
+
+.popup__contact .popup__contact--top {
+    border-radius: 8px 8px 0 0;
+    position: relative;
+    background-color: var(--red);
+    padding: 15px;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.popup__contact .popup__contact--top img {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+}
+
+.popup__contact .popup__contact--content a {
+    display: flex;
+    align-items: center;
+    color: #000000;
+    line-height: 18px;
+    gap: 12px;
+    padding: 7px 10px;
+}
+
+.popup__contact .popup__contact--content a:hover {
+    background-color: #f0f0f0;
+}
+
+.popup__contact .popup__contact--content a div:nth-child(1) {
+    width: 30px;
+    text-align: center;
+    padding-top: 30px;
+    height: 30px;
+}
+
+.popup__contact .popup__contact--content a div:nth-child(1).small.img-wrap img {
+    transform: scale(0.6);
+}
+
+.popup__contact .popup__contact--content a div:nth-child(2) p:nth-child(1) {
+    font-size: 14px;
+}
+
+.popup__contact .popup__contact--content a div:nth-child(2) p:nth-child(2) {
+    font-size: 12px;
+    margin-top: 1px;
+    color: #999;
+}
+
+.popup__contact .popup__contact--footer {
+    cursor: pointer;
+    padding: 16px;
+}
+
+.popup__contact .popup__contact--footer input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.popup__contact .popup__contact--loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+}
+
+.popup__contact .popup__contact--loading.hidden {
+    display: none !important;
+}
+
+.popup__contact .popup__contact--content.hidden {
+    display: none !important;
+}
+
+/* popup contact */
