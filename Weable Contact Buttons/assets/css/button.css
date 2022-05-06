@@ -14,20 +14,93 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+a {
+    cursor: pointer;
+}
+
 /* button */
 
+
+/* animation */
+.animated-button-out {
+    animation-name: zoomIn;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    width: 100px;
+    height: 100px;
+    top: -20px;
+    left: -20px;
+    position: absolute;
+    background-color: transparent;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    border: 4px solid rgba(30, 30, 30, 0.4);
+    border-color: var(--red);
+    opacity: .5;
+    z-index: 9999;
+}
+
+.animated-button-in {
+    width: 75px;
+    height: 75px;
+    top: -8px;
+    left: -8px;
+    position: absolute;
+    border-radius: 100%;
+    border: 2px solid transparent;
+    background-color: rgba(213, 5, 1, 0.39);
+    opacity: .75;
+    z-index: 9999;
+    animation-iteration-count: infinite;
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+/* animation */
+.contact-button {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+}
+
 .button-fixed {
+    position: relative;
     width: 60px;
     height: 60px;
     cursor: pointer;
-    position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: var(--red);
     border-radius: 100rem;
-    bottom: 16px;
-    right: 16px;
 }
 
 .button-fixed>img {
@@ -91,6 +164,7 @@
     top: 50%;
     transform: translateY(-50%);
     right: 15px;
+    cursor: pointer;
 }
 
 .popup__contact .popup__contact--content a {
@@ -130,6 +204,12 @@
 .popup__contact .popup__contact--footer {
     cursor: pointer;
     padding: 16px;
+    transition: all 0.3s;
+}
+
+.popup__contact .popup__contact--footer.active {
+    transform: translateX(10px);
+    color: var(--red);
 }
 
 .popup__contact .popup__contact--footer input[type="checkbox"] {
@@ -149,6 +229,53 @@
 
 .popup__contact .popup__contact--content.hidden {
     display: none !important;
+}
+
+.popup__contact .popup__contact--form {
+    padding: 16px;
+}
+
+.popup__contact .popup__contact--form div {
+    margin-bottom: 10px;
+}
+
+.popup__contact .popup__contact--form div label {
+    font-size: 13px;
+    margin-bottom: 4px;
+    font-weight: 500;
+    display: block;
+}
+
+.popup__contact .popup__contact--form div input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    background: #f7f7f7;
+    border: 1px solid #dcdbdb;
+}
+
+.popup__contact .popup__contact--form div textarea {
+    resize: none;
+    width: 100%;
+    background: #f7f7f7;
+    border: 1px solid #dcdbdb;
+    padding: 8px;
+    height: 200px;
+}
+
+.popup__contact .popup__contact--form div input:focus,
+.popup__contact .popup__contact--form div textarea:focus {
+    background: #ffffff;
+}
+
+.popup__contact .popup__contact--form input[type="submit"] {
+    background-color: var(--red);
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    padding: 12px 8px;
+    border-radius: 4px;
 }
 
 /* popup contact */

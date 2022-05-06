@@ -21,9 +21,13 @@
 
 <body>
 
-    <div class="button-fixed right bottom">
-        <img src="./assets/imgs/comment-icon.png" class="button-fixed-comment" alt="">
-        <img src="./assets/imgs/close.png" class="button-fixed-close hidden" alt="">
+    <div class="contact-button">
+        <div class="button-fixed">
+            <div class="animated-button-out"></div>
+            <div class="animated-button-in"></div>
+            <img src="./assets/imgs/comment-icon.png" class="button-fixed-comment" alt="">
+            <img src="./assets/imgs/close.png" class="button-fixed-close hidden" alt="">
+        </div>
         <div class="popup__contact">
             <div class="popup__contact--top">
                 We'd love to hear from you.
@@ -32,8 +36,42 @@
             <duv class="popup__contact--loading">
                 <div class="dot-flashing"></div>
             </duv>
-            <div class="popup__contact--content hidden">
-                <a href="">
+            <div class="popup__contact--callback popup__contact--get hidden">
+                <form action="" class="popup__contact--form">
+                    <div>
+                        <label for="">Enter your full name</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label for="">Enter callback number</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label for="">Enter message</label>
+                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <input type="submit" value="Schedule a Call">
+                </form>
+            </div>
+            <div class="popup__contact--email popup__contact--get hidden">
+                <form action="" class="popup__contact--form">
+                    <div>
+                        <label for="">Enter your full name</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label for="">Enter your email address</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label for="">Enter message</label>
+                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <input type="submit" value="Send Email">
+                </form>
+            </div>
+            <div class="popup__contact--content popup__contact--get hidden">
+                <a data-type="callback">
                     <div class="img-wrap small">
                         <img src="./assets/imgs/phone-call.png" alt="">
                     </div>
@@ -42,7 +80,7 @@
                         <p></p>
                     </div>
                 </a>
-                <a href="">
+                <a data-type="email">
                     <div class="img-wrap small">
                         <img src="./assets/imgs/email.png" alt="">
                     </div>
